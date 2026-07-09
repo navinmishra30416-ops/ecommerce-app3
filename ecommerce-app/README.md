@@ -4,7 +4,7 @@ A modular-monolith e-commerce backend: product catalog, cart, checkout with
 inventory reservation, JWT auth, and payment integration point.
 
 ## Stack
-- Java 17, Spring Boot 3.3
+- Java 25, Spring Boot 3.3
 - PostgreSQL + Flyway (schema-managed migrations, no Hibernate auto-ddl)
 - Redis (wired in, not yet used — good fit for cart caching or rate limiting)
 - Spring Security + JWT
