@@ -16,7 +16,10 @@ public class CorsConfig {
         CorsConfiguration configuration = new CorsConfiguration();
         // Demo-friendly: allow any origin (including local file:// pages).
         // For a real production app, replace this with your actual frontend domain(s).
-        configuration.setAllowedOriginPatterns(List.of("*"));
+        configuration.setAllowedOriginPatterns(List.of(
+          "http://localhost:5173",
+          "https://ecommerce-frontend-puce-zeta.vercel.app"
+        ));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);
