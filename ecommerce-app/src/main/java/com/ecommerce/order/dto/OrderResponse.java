@@ -12,6 +12,8 @@ public record OrderResponse(
         OrderStatus status,
         BigDecimal totalAmount,
         List<OrderItemResponse> items,
-        Instant createdAt
+        Instant createdAt,
+        String razorpayOrderId,
+        String razorpayKeyId
 ) {
 }

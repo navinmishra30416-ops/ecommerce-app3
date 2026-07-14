@@ -2,6 +2,7 @@ package com.ecommerce.order;
 
 import com.ecommerce.order.dto.CheckoutRequest;
 import com.ecommerce.order.dto.OrderResponse;
+import com.ecommerce.order.dto.PaymentVerificationRequest;
 import jakarta.validation.Valid;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,6 +25,12 @@ public class OrderController {
     public OrderResponse checkout(@AuthenticationPrincipal UserDetails principal,
                                    @Valid @RequestBody CheckoutRequest request) {
         return orderService.checkout(principal.getUsername(), request);
+    }
+
+    @PostMapping("/verify-payment")
+    public OrderResponse verifyPayment(@AuthenticationPrincipal UserDetails principal,
+                                        @Valid @RequestBody PaymentVerificationRequest request) {
+        return orderService.verifyPayment(principal.getUsername(), request);
     }
 
     @GetMapping

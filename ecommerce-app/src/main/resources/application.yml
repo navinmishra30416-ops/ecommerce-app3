@@ -36,6 +36,10 @@ app:
     secret: ${JWT_SECRET:change-this-to-a-long-random-secret-in-production-please}
     expiration-ms: 86400000   # 24 hours
 
+razorpay:
+  key-id: ${RAZORPAY_KEY_ID}
+  key-secret: ${RAZORPAY_KEY_SECRET}
+
 logging:
   level:
     com.ecommerce: INFO
