@@ -145,18 +145,6 @@ public class OrderService {
     
         );
 
-        /**
-     * Called after signature verification succeeds. Updates the Payment
-     * record from PENDING to SUCCEEDED, and swaps the stored reference
-     * from the Razorpay order id to the actual Razorpay payment id.
-     */
-    public void markSucceeded(UUID orderId, String razorpayPaymentId) {
-        Payment payment = paymentRepository.findByOrderId(orderId)
-                .orElseThrow(() -> new RuntimeException("Payment not found for order: " + orderId));
-        payment.setStatus(PaymentStatus.SUCCEEDED);
-        payment.setTransactionRef(razorpayPaymentId);
-        paymentRepository.save(payment);
-    }
 
         if (!valid) {
             releaseReservation(order);
