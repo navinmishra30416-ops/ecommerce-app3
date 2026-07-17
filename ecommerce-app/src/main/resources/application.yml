@@ -11,6 +11,18 @@ spring:
     password: ${PGPASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_APP_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
   jpa:
     hibernate:
       ddl-auto: validate   # schema is managed by Flyway, never let Hibernate auto-generate it
@@ -35,7 +47,7 @@ app:
   jwt:
     secret: ${JWT_SECRET:change-this-to-a-long-random-secret-in-production-please}
     expiration-ms: 86400000   # 24 hours
-
+  frontend-url: ${FRONTEND_URL:http://localhost:5173}
 razorpay:
   key-id: ${RAZORPAY_KEY_ID}
   key-secret: ${RAZORPAY_KEY_SECRET}

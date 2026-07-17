@@ -36,6 +36,12 @@ public class User {
     @Column(nullable = false)
     private Role role = Role.CUSTOMER;
 
+    @Column(name = "reset_token")
+    private String resetToken;
+
+    @Column(name = "reset_token_expiry")
+    private Instant resetTokenExpiry;
+
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private Instant createdAt;
